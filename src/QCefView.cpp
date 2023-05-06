@@ -440,3 +440,17 @@ QCefView::contextMenuEvent(QContextMenuEvent* event)
   }
   // #endif
 }
+
+void
+QCefView::showDevTools()
+{
+  Q_D(QCefView);
+  d->showDevTools();
+}
+
+void
+QCefView::closeDevTools()
+{
+  Q_D(QCefView);
+  d->closeDevTools();
+}

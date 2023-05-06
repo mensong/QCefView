@@ -24,9 +24,9 @@ main(int argc, char* argv[])
   // (QCefSetting.setBackgroundColor will overwrite this value for specified browser instance)
   config.setBackgroundColor(Qt::lightGray);
 
-  // WindowlessRenderingEnabled is set to true by default,
-  // set to false to disable the OSR mode
-  config.setWindowlessRenderingEnabled(true);
+  // WindowlessRenderingEnabled is set to false by default,
+  // set to true to enable the OSR mode if need
+  // config.setWindowlessRenderingEnabled(true);
 
   // add command line args, you can any cef supported switches or parameters
   config.addCommandLineSwitch("use-mock-keychain");

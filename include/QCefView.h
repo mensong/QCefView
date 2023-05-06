@@ -238,6 +238,16 @@ public:
   /// <returns>True to disable; otherwise false</returns>
   bool isPopupContextMenuDisabled();
 
+  /// <summary>
+  /// Show Dev Tools
+  /// </summary>
+  void showDevTools();
+
+    /// <summary>
+  /// Close Dev Tools
+  /// </summary>
+  void closeDevTools();
+
 signals:
   /// <summary>
   /// Gets called on loading state changed

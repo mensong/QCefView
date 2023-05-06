@@ -57,7 +57,7 @@ protected slots:
 
   void onBtnNewBrowserClicked();
 
-  private:
+private:
   void closeEvent(QCloseEvent* event) override;
 
 private:

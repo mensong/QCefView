@@ -1,3 +1,4 @@
 [submodule "CefViewCore"]
 	path = CefViewCore
-	url = https://github.com/CefView/CefViewCore
+	url = https://github.com/mensong/CefViewCore
+	branch = mensong

@@ -8,8 +8,8 @@
 #include <QJsonValue>
 #include <QMessageBox>
 #include <QRandomGenerator>
-
 #include <QCefContext.h>
+#include <QTimer>
 
 #define URL_ROOT "http://QCefViewDoc"
 #define INDEX_URL URL_ROOT "/index.html"
@@ -273,11 +273,15 @@ MainWindow::onBtnNewBrowserClicked()
   w->setAttribute(Qt::WA_DeleteOnClose);
 
   QCefSetting settings;
-  QCefView* view = new QCefView("https://cefview.github.io/QCefView/", &settings, w);
+  QCefView* view = new QCefView("http://127.0.0.1", &settings, w);
 
   w->setCentralWidget(view);
   w->resize(1024, 768);
   w->show();
+  
+  QTimer::singleShot(1000, this, [view]() -> void { 
+	view->showDevTools(); 
+  });
 }
 
 void

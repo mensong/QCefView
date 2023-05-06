@@ -43,8 +43,8 @@ public:
 
   int logLevel_ = LOGSEVERITY_DEFAULT;
 
-  // Enable OSR mode by default
-  /* bool   */ QVariant windowlessRenderingEnabled_ = true;
+  // Disable OSR mode by default
+  /* bool   */ QVariant windowlessRenderingEnabled_ = false;
 
   /* bool   */ QVariant persistSessionCookies_;
   /* bool   */ QVariant persistUserPreferences_;

@@ -1163,3 +1163,31 @@ QCefViewPrivate::setPreference(const QString& name, const QVariant& value, const
 
   return false;
 }
+
+void
+QCefViewPrivate::showDevTools()
+{
+  if (pCefBrowser_) {
+    CefRefPtr<CefBrowserHost> host = pCefBrowser_->GetHost();
+    if (host) {
+      CefWindowInfo windowInfo;
+      CefBrowserSettings settings;
+      windowInfo.SetAsPopup(NULL, "Dev Tools");
+      host->ShowDevTools(windowInfo, pClient_, settings, CefPoint());
+    }
+  }
+}
+
+void
+QCefViewPrivate::closeDevTools()
+{
+  if (pCefBrowser_) {
+    CefRefPtr<CefBrowserHost> host = pCefBrowser_->GetHost();
+    if (host) {
+      CefWindowInfo windowInfo;
+      CefBrowserSettings settings;
+      windowInfo.SetAsPopup(NULL, "Dev Tools");
+      host->CloseDevTools();
+    }
+  }
+}
